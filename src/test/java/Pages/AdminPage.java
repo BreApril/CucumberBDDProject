@@ -1,5 +1,6 @@
 package Pages;
 
+import Steps.createGroupSteps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,6 +45,12 @@ public class AdminPage {
     @FindBy(xpath = "//*[@id='app-root']/div/div[3]/div/div[4]/div/form/div[5]/button[1]")
     WebElement createGroupButton;
 
+    @FindBy(xpath = "//*[@id='app-root']/div/div[2]/div[2]/button")
+    WebElement backToWebsiteButton;
+
+    @FindBy(xpath = "//*[@id='app-root']/nav/div[1]/div[3]/div/div/button[5]/span[2]")
+    WebElement logoutButton;
+
     public AdminPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -80,4 +87,15 @@ public class AdminPage {
     public void clickCreateGroup() {
         createGroupButton.click();
     }
+
+    public void clickBackToWebsite() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(backToWebsiteButton));
+        backToWebsiteButton.click();
+    }
+
+    public void clickLogout() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(logoutButton));
+        logoutButton.click();
+    }
+
 }

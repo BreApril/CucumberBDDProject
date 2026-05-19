@@ -32,11 +32,14 @@ public class LoginPage {
         loginHeading_xpath.isDisplayed();
     }
     public void enterEmail(String email) {
+        loginEmail_id.clear();
         loginEmail_id.sendKeys(email);
     }
     public void enterPassword(String password) {
+        password_id.clear();
         password_id.sendKeys(password);
     }
+
     public void clickLoginButton() {
         loginButton.click();
     }

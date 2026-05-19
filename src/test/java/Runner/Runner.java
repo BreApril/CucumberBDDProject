@@ -1,5 +1,6 @@
 package Runner;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (
@@ -11,5 +12,5 @@ import io.cucumber.testng.CucumberOptions;
         publish = true
 )
 
-public class runner {
+public class Runner extends AbstractTestNGCucumberTests {
 }
