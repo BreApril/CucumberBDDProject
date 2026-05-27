@@ -2,6 +2,7 @@ package Steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
+import org.testng.Assert;
 
 public class createGroupSteps extends Base {
 
@@ -28,7 +29,13 @@ public class createGroupSteps extends Base {
 
     @Then("I should be logged in successfully")
     public void i_should_be_logged_in_successfully() {
+//        adminPage.verifyAdminPageIsDisplayed();
     }
+//        String actualTitle = driver.getTitle();
+//        String expectedTitle = "Dashboard";
+//
+//        Assert.assertEquals(actualTitle, expectedTitle);
+//    }
 
     @Then("I click on the logged in user")
     public void i_click_on_the_logged_in_user() {
@@ -45,8 +52,8 @@ public class createGroupSteps extends Base {
         adminPage.clickGroups();
     }
 
-    @And("I click on the create group button")
-    public void i_click_on_the_create_group_button() {
+    @And("I click on the create new group button")
+    public void i_click_on_the_create_new_group_button() {
         adminPage.clickCreateNewGroup();
     }
 
@@ -71,7 +78,7 @@ public class createGroupSteps extends Base {
         adminPage.enterMaxCapacity(maxCapacity);
     }
 
-    @And("I enter start date")
+    @And("I enter start date {string}")
     public void i_enter_start_date(String startDate) {
         adminPage.enterStartDate(startDate);
     }
@@ -88,6 +95,10 @@ public class createGroupSteps extends Base {
 
     @Then("I should see the group created successfully")
     public void i_should_see_the_group_created_successfully() {
+//        String
+//        String
+//
+//        Assert.assertEquals();
     }
 
     @And("I logout")
@@ -97,10 +108,15 @@ public class createGroupSteps extends Base {
         adminPage.clickLogout();
     }
 
-    @And("I navigate to the sign up page")
+//    @And("I navigate to the sign up page")
+//    public void i_navigate_to_the_sign_up_page() {
+//        signUpPage.clickSignUpButton();
+@And("I navigate to the sign up page")
     public void i_navigate_to_the_sign_up_page() {
-        signUpPage.clickSignUpButton();
-    }
+    driver.get("https://ndosisimplifiedautomation.vercel.app/");
+    homePage.clickLoginButton();
+    signUpPage.clickSignUpButton();
+}
 
     @Then("the created group should appear in the group dropdown")
     public void the_created_group_should_appear() {
